@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HospitalERP.Models
 {
@@ -16,5 +17,10 @@ namespace HospitalERP.Models
         public string UserID { get; set; }
         public string Response { get; set; }
 
+        Random random = new Random();
+        public Login()
+        {
+            UserID = Convert.ToString((long)Math.Floor(random.NextDouble() * 9_000_000_000L + 1_000_000_000L));
+        }
     }
 }

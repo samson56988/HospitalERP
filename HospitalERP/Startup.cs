@@ -29,6 +29,7 @@ namespace HospitalERP
             services.AddSession();
             services.AddDistributedMemoryCache();
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
+            services.AddScoped<IAdminServices, AdminServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +56,7 @@ namespace HospitalERP
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Authentication}/{action=Login}/{id?}");
+                    pattern: "{controller=Admin}/{action=AddDoctor}/{id?}");
             });
         }
     }

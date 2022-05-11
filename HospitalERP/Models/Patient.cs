@@ -2,6 +2,7 @@
 {
     public class Patient
     {
+        public string PatientId { get; set; }
         public string P_Firstname { get; set; }
         public string P_Lastname { get; set; }
         public string P_Middlename { get; set; }
